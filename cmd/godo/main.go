@@ -259,7 +259,7 @@ func buildMain(src string, forceBuild bool) string {
 		if env != "" {
 			godo.Env = env
 		}
-		_, err := godo.Run("go build -a -o "+exeFile, godo.M{"$in": dir})
+		_, err := godo.Run("go build -o "+exeFile, godo.M{"$in": dir})
 		if err != nil {
 			panic(fmt.Sprintf("Error building %s: %s\n", src, err.Error()))
 		}
