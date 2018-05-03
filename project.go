@@ -268,29 +268,37 @@ func (project *Project) run(name string, logName string, e *watcher.FileEvent) e
 	return task.RunWithEvent(logName, e)
 }
 
+// tasks returns a map of task names tasks
+func (project *Project) tasks() map[string]*Task {
+	m := map[string]*Task{}
+	for ns, proj := range project.Namespace {
+		if ns == "" {
+			for _, task := range proj.Tasks {
+				m[task.Name] = task
+			}
+		} else {
+			for name, task := range proj.tasks() {
+				m[ns+":"+name] = task
+			}
+		}
+	}
+	return m
+}
+
 // usage returns a string for usage screen
 func (project *Project) usage() string {
 	tasks := "Tasks:\n"
-	names := []string{}
-	m := map[string]*Task{}
-	for ns, proj := range project.Namespace {
-		if ns != "" {
-			ns += ":"
-		}
-		for _, task := range proj.Tasks {
-			names = append(names, ns+task.Name)
-			m[ns+task.Name] = task
-		}
-	}
-	sort.Strings(names)
+	m := project.tasks()
+	names := make([]string, 0, len(m))
 	longest := 0
-	for _, name := range names {
+	for name := range m {
+		names = append(names, name)
 		l := len(name)
 		if l > longest {
 			longest = l
 		}
 	}
-
+	sort.Strings(names)
 	for _, name := range names {
 		task := m[name]
 		description := task.description
