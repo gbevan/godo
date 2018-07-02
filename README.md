@@ -18,6 +18,11 @@ To install from source/clone:
     cd cmd/godo
     go install
 
+when testing in a target project:
+
+    cd Gododir
+    rm godobin-2.*
+
 ## Godofile
 
 Godo runs `Gododir/main.go`.
