@@ -252,6 +252,7 @@ func (w *Watcher) syncAddPaths(paths ...string) {
 
 func (w *Watcher) syncAddDir(wi *watchItem) {
 	walker := func(path string, info os.FileInfo, err error) error {
+		// fmt.Printf("walker path: %s\n", path)
 		if w.IgnorePathFn(path) {
 			if info.IsDir() {
 				//fmt.Println("SKIPPING dir", path)
@@ -263,6 +264,12 @@ func (w *Watcher) syncAddDir(wi *watchItem) {
 		if err != nil {
 			return err
 		}
+
+		// fmt.Printf("mode: %v\n", info.Mode())
+		if info.Mode().String()[0] == 'L' {
+			return nil
+		}
+
 		if path == wi.Path {
 			return nil
 		}
@@ -278,6 +285,7 @@ func (w *Watcher) syncAddDir(wi *watchItem) {
 		}
 		return nil
 	}
+	// fmt.Printf("calling Walk wi.Path: %s\n", wi.Path)
 	filepath.Walk(wi.Path, walker)
 }
 

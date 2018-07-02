@@ -94,7 +94,6 @@ func (gcmd *command) runAsync() error {
 		return err
 	}
 
-	fmt.Printf("gcmd.executable: %s\n", gcmd.executable)
 	// id := gcmd.commandstr
 	id := gcmd.executable
 
@@ -119,10 +118,7 @@ func (gcmd *command) runAsync() error {
 }
 
 func killSpawned(command string) {
-	fmt.Printf("in killSpawned command: %s\n", command)
-	fmt.Printf("Processes: %v\n", Processes)
 	process := Processes[command]
-	fmt.Printf("process: %v\n", process)
 	if process == nil {
 		return
 	}
