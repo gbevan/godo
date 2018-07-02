@@ -11,7 +11,7 @@ This is a fork of the original at [https://github.com/go-godo/godo](https://gith
 
 To install
 
-    go get -u github.com/davars/godo/cmd/godo
+    go get -u github.com/gbevan/godo/cmd/godo
 
 ## Godofile
 
