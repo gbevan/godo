@@ -7,3 +7,4 @@ example/dist
 godobin*
 /cmd/godo/godo
 *.iml
+/vendor
