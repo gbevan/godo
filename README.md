@@ -15,6 +15,7 @@ To install
 
 To install from source/clone:
 
+    dep ensure
     cd cmd/godo
     go install
 
