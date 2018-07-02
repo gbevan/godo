@@ -16,9 +16,9 @@ import (
 
 	// this MUST not reference any godo/v? directory
 
-	"github.com/davars/godo"
-	"github.com/davars/godo/util"
-	"github.com/davars/godo/watcher"
+	"github.com/gbevan/godo"
+	"github.com/gbevan/godo/util"
+	"github.com/gbevan/godo/watcher"
 	"github.com/mgutz/minimist"
 )
 

@@ -3,7 +3,7 @@ package godo
 import (
 	"time"
 
-	"github.com/davars/godo/util"
+	"github.com/gbevan/godo/util"
 	"github.com/mgutz/str"
 )
 

@@ -7,7 +7,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/davars/godo/util"
+	"github.com/gbevan/godo/util"
 	"github.com/mgutz/ansi"
 )
 
@@ -117,6 +117,7 @@ func (gcmd *command) runAsync() error {
 }
 
 func killSpawned(command string) {
+	fmt.Println("in killSpawned")
 	process := Processes[command]
 	if process == nil {
 		return

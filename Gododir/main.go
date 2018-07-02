@@ -6,7 +6,7 @@ import (
 	// "github.com/mgutz/goa"
 	// f "github.com/mgutz/goa/filter"
 
-	do "github.com/davars/godo"
+	do "github.com/gbevan/godo"
 )
 
 func tasks(p *do.Project) {
@@ -37,7 +37,7 @@ func tasks(p *do.Project) {
 	// 	// add godoc
 	// 	goa.Pipe(
 	// 		f.Load("./README.md"),
-	// 		f.Str(str.ReplaceF("--", "\n[godoc](https://godoc.org/github.com/davars/godo)\n", 1)),
+	// 		f.Str(str.ReplaceF("--", "\n[godoc](https://godoc.org/github.com/gbevan/godo)\n", 1)),
 	// 		f.Write(),
 	// 	)
 	// })
@@ -84,9 +84,9 @@ func tasks(p *do.Project) {
 
 	p.Task("change-package", nil, func(c *do.Context) {
 		// works on mac
-		c.Run(`find . -name "*.go" -print | xargs sed -i "" 's|gopkg.in/godo.v1|github.com/davars/godo|g'`)
+		c.Run(`find . -name "*.go" -print | xargs sed -i "" 's|gopkg.in/godo.v1|github.com/gbevan/godo|g'`)
 		// maybe linux?
-		//Run(`find . -name "*.go" -print | xargs sed -i 's|gopkg.in/godo.v1|github.com/davars/godo|g'`)
+		//Run(`find . -name "*.go" -print | xargs sed -i 's|gopkg.in/godo.v1|github.com/gbevan/godo|g'`)
 	})
 }
 

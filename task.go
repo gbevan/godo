@@ -8,9 +8,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/davars/godo/glob"
-	"github.com/davars/godo/util"
-	"github.com/davars/godo/watcher"
+	"github.com/gbevan/godo/glob"
+	"github.com/gbevan/godo/util"
+	"github.com/gbevan/godo/watcher"
 	"github.com/mgutz/minimist"
 	"github.com/mgutz/str"
 )

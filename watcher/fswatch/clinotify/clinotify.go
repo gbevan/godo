@@ -9,7 +9,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/davars/godo/watcher/fswatch"
+	"github.com/gbevan/godo/watcher/fswatch"
 )
 
 var dur time.Duration

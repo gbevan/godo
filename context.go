@@ -1,8 +1,8 @@
 package godo
 
 import (
-	"github.com/davars/godo/util"
-	"github.com/davars/godo/watcher"
+	"github.com/gbevan/godo/util"
+	"github.com/gbevan/godo/watcher"
 	"github.com/mgutz/minimist"
 )
 

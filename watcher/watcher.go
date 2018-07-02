@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/davars/godo/watcher/fswatch"
+	"github.com/gbevan/godo/watcher/fswatch"
 	"github.com/mgutz/str"
 )
 

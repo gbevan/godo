@@ -2,5 +2,5 @@
 //
 // To install
 //
-//      go get -u github.com/davars/godo/cmd/godo
+//      go get -u github.com/gbevan/godo/cmd/godo
 package godo

@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/davars/godo/glob"
+	"github.com/gbevan/godo/glob"
 )
 
 // FileExists determines if path exists
